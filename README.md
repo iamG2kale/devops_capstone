@@ -1,14 +1,14 @@
 # devops_capstone
 
 
-Name : Jitesh Jayendra Kale
-Project : DevOps Capstone Project
-Project Directory : https://bit.ly/37SrxjW
-Infrastructure and Code files : https://bit.ly/3wk29vR
-Task 1 Screens : https://bit.ly/3y6Cmtq
-Task 2 Screens : https://bit.ly/3MNXhFS
-Task 3 Screens : https://bit.ly/38LByj9
-Task 4 Screens : https://bit.ly/3kwpLI5
+Name : Jitesh Jayendra Kale </br>
+Project : DevOps Capstone Project </br>
+Project Directory : https://bit.ly/37SrxjW </br>
+Infrastructure and Code files : https://bit.ly/3wk29vR </br>
+Task 1 Screens : https://bit.ly/3y6Cmtq </br>
+Task 2 Screens : https://bit.ly/3MNXhFS </br>
+Task 3 Screens : https://bit.ly/38LByj9 </br>
+Task 4 Screens : https://bit.ly/3kwpLI5 </br>
 
 
 
