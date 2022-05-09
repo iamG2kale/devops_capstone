@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-cli
+  namespace: demo
+spec: # specification for master redis
+  selector:
+    matchLabels:
+      app: redis
+      role: master
+      tier: backend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: redis
+        role: master
+        tier: backend
+    spec: # container using redis official image
+      containers:
+      - name: master
+        image: redis
+        resources:
+          requests:
+            cpu: 200m
+            memory: 200Mi
+        command: ['sh', '-c', 'echo The Pod is running && sleep 100000'] # command to sleep pod until it connects
+        ports:
+        - containerPort: 6379
+      restartPolicy: Always

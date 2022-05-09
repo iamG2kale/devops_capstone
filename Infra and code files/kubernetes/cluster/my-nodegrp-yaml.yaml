@@ -1,0 +1,38 @@
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: Jitesh-cluster
+  region: us-east-1
+# nodegroup defination to create to machines with t2.medium configuration
+nodeGroups:
+  - name: jitesh-ng-1
+    tags:
+      k8s.io/cluster-autoscaler/enabled: "true" # tag is needed for cluster autoscaler. Refer: https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md#auto-discovery-setup
+      k8s.io/cluster-autoscaler/Jitesh-cluster: "shared" # cluster name tag is optional in latest versions of EKS
+    instancesDistribution:
+      instanceTypes:
+        - t2.medium
+    desiredCapacity: 1
+    minSize: 0
+    maxSize: 5
+    volumeSize: 12
+
+  - name: jitesh-ng-2
+    tags:
+      k8s.io/cluster-autoscaler/enabled: "true" # tag is needed for cluster autoscaler. Refer: https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md#auto-discovery-setup
+      k8s.io/cluster-autoscaler/Jitesh-cluster: "shared" # cluster name tag is optional in latest versions of EKS
+    instancesDistribution:
+      instanceTypes:
+        - t2.medium
+    desiredCapacity: 1
+    minSize: 0
+    maxSize: 5
+    volumeSize: 12
+    labels:
+      node-group-type: jitesh-workers
+      my-label: jitesh-cap
+    taints:
+      feaster: true:NoSchedule
+managedNodeGroups:
